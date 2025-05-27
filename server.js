@@ -5,7 +5,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://voxa-assist.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 // List of paths to crawl on the website
